@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOT GIRLS READ</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/lpq0cyx.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo_text">
+        <a href="/">HOT GIRLS READ</a>
+    </div>
+
+    <div class="submit">
+        <a href="/submit">SUBMIT</a>
+    </div>
+    <div class="about">
+        <a href="/about">ABOUT</a>
+    </div>
+    <div class="merch">
+        <a href="/merch">MERCH</a>
+    </div>
+    <div class="list">
+        <a href="/list">LIST</a>
+    </div>
+
+
+
+    <div class="about_container">
+        <div class="centered-content">
+
+            <% if (error) { %>
+            <p class="error"><%= error %></p>
+            <% } %>
+
+            <form id="submitForm" action="/upload" method="POST" enctype="multipart/form-data">
+
+                <!-- Hide the default file input -->
+                <input type="file" id="image" name="image" accept="image/*" required style="display:none;">
+                <button type="button" onclick="document.getElementById('image').click()">Select File</button>
+                <br><span id="fileName" style="display:none;"></span>
+                <div class="message">
+                    <p> If you're using an iPhone and having trouble submitting a photo, it might be due
+                        to the high-format
+                        image. Please try taking a screenshot of the image and then submit that instead. Thank you!
+                    </p>
+                </div>
+
+                <br>
+                <input type="submit" value="UPLOAD">
+                <div id="submitMessage" class="hidden">Uploading, please wait...</div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        document.getElementById('submitForm').addEventListener('submit', function (event) {
+            document.getElementById('submitMessage').classList.remove('hidden');
+            document.getElementById('submitMessage').classList.add('visible');
+            event.target.querySelector('input[type="submit"]').disabled = true;
+        });
+
+        // Update the label with the selected file name
+        document.getElementById('image').addEventListener('change', function () {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            document.getElementById('fileName').innerText = fileName;
+            document.getElementById('fileName').style.display = 'inline'; // Show file name when selected
+        });
+    </script>
+
+</body>
+
+</html>

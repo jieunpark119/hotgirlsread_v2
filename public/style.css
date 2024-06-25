@@ -1,0 +1,488 @@
+html,
+body {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.submit {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999999999;
+  color: #ffffff;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  background-color: #000; /* Initial background color (black) */
+  border: 1px solid transparent; /* Initial border (transparent) */
+
+  /* Define transition for smooth animation */
+  transition: color 0.3s, border-color 0.3s;
+
+  /* Optional: Add padding and other styles */
+  padding: 4px;
+  display: inline-block;
+}
+.submit a {
+  text-decoration: none;
+  color: white;
+}
+
+.submit a:hover {
+  color: #000000;
+}
+.submit:hover {
+  color: #000000;
+  background-color: transparent;
+}
+
+.about {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999999999;
+  color: #ffffff;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  background-color: #000; /* Initial background color (black) */
+  border: 1px solid transparent; /* Initial border (transparent) */
+
+  /* Define transition for smooth animation */
+  transition: color 0.3s, border-color 0.3s;
+
+  /* Optional: Add padding and other styles */
+  padding: 4px;
+  display: inline-block;
+}
+.about a {
+  text-decoration: none;
+  color: white;
+}
+
+.about a:hover {
+  color: #000000;
+}
+.about:hover {
+  color: #000000;
+  background-color: transparent;
+}
+
+.merch {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999999999;
+  color: #ffffff;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  background-color: #000; /* Initial background color (black) */
+  border: 1px solid transparent; /* Initial border (transparent) */
+
+  /* Define transition for smooth animation */
+  transition: color 0.3s, border-color 0.3s;
+
+  /* Optional: Add padding and other styles */
+  padding: 4px;
+  display: inline-block;
+}
+.merch a {
+  text-decoration: none;
+  color: white;
+}
+
+.merch a:hover {
+  color: #000000;
+}
+.merch:hover {
+  color: #000000;
+  background-color: transparent;
+}
+
+.list {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999999999;
+  color: #ffffff;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  background-color: #000; /* Initial background color (black) */
+  border: 1px solid transparent; /* Initial border (transparent) */
+
+  /* Define transition for smooth animation */
+  transition: color 0.3s, border-color 0.3s;
+
+  /* Optional: Add padding and other styles */
+  padding: 4px;
+  display: inline-block;
+}
+
+.list a {
+  text-decoration: none;
+  color: white;
+}
+
+.list a:hover {
+  color: #000000;
+}
+.list:hover {
+  color: #000000;
+  background-color: transparent;
+}
+.logo_text {
+  position: fixed;
+  position: fixed;
+  top: 10px;
+  left: 50%; /* Position the left edge of the div at 50% of the viewport width */
+  transform: translateX(-50%);
+  z-index: 999999999;
+  color: #000;
+
+  text-align: center;
+  leading-trim: both;
+
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.598px;
+}
+.logo_text_homepage {
+  position: fixed;
+  position: fixed;
+  top: 10px;
+  left: 50%; /* Position the left edge of the div at 50% of the viewport width */
+  transform: translateX(-50%);
+  z-index: 999999999;
+  color: #000;
+
+  text-align: center;
+  leading-trim: both;
+
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.logo_text_homepage.visible {
+  opacity: 1;
+}
+
+.logo_text_homepage a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo_text a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  position: fixed;
+  z-index: -99999;
+  width: 100%; /* Makes the image width cover the entire viewport width */
+  height: 98%; /* Makes the image height cover the entire viewport height */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+  padding: 10px 0px;
+}
+
+.logo.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevents clicks on hidden logo */
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  position: relative;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  bottom: auto;
+  right: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 40px;
+
+  box-shadow: 0px -21px 19.9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.panel-content {
+  width: 80%;
+  max-width: 780px;
+  padding: 80px 0px;
+
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+h1 {
+  color: #000;
+  margin: 0;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 5vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 105px */
+  letter-spacing: -0.5px;
+}
+
+h1 a {
+  color: #000;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  background-color: black;
+  color: white;
+}
+
+h3 {
+  display: none;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 20px;
+  background-color: none;
+  color: black;
+  text-align: center;
+  font-family: Anton;
+  font-size: 2vw; /* Responsive font size based on viewport width */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+h2 {
+  color: #000;
+  margin: 0;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 5vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 98%; /* 105px */
+  letter-spacing: -0.5px;
+}
+.panel-content img {
+  width: 450px;
+  flex: 1 0 0;
+  object-fit: contain;
+}
+.image_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+}
+.image_container img {
+  max-height: calc(100% - 40px);
+}
+.top {
+  height: 100%;
+}
+
+#fileName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 120%;
+}
+
+#submitMessage {
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+input[type="submit"] {
+  color: #ffffff;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Anton;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.598px;
+  background-color: #000; /* Initial background color (black) */
+  border: none;
+  border-radius: 0;
+  /* Optional: Add padding and other styles */
+  padding: 4px;
+  display: inline-block;
+}
+
+/* Adjust hover and focus effects */
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #ff0000;
+}
+
+.about_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 120%;
+}
+
+.centered-content {
+  margin-top: 100px;
+  width: 300px;
+  padding: 0px 20px;
+  text-align: center;
+  /* Additional styling for your content */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 items per row */
+  gap: 0px;
+}
+
+.grid-item {
+  text-align: center;
+  background-color: #fff;
+  height: 450px;
+  /* Fixed height for each grid item */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Ensures the image does not overflow */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Fills the entire box with the image while maintaining aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 98%; /* Make the logo width 98% on mobile screens */
+    height: auto; /* Allow the logo height to adjust proportionally */
+    padding: 5px 0; /* Adjust padding as needed for smaller screens */
+    position: fixed; /* Position the logo fixed on the screen */
+    top: 50%; /* Align the logo vertically at 50% from the top */
+    left: 50%; /* Align the logo horizontally at 50% from the left */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: -999; /* Ensure the logo is on top of other content */
+  }
+  .panel-content {
+    padding: 0;
+    width: 100%;
+  }
+
+  .panel-inner-content {
+    padding: 40px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  .panel {
+    padding: 0px 0px;
+  }
+
+  .submit {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    font-size: 24px;
+  }
+  .about {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+  }
+  .merch {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+  }
+  .list {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    font-size: 24px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 4 items per row */
+    gap: 0px;
+  }
+  .grid-item {
+    height: 350px;
+  }
+}
