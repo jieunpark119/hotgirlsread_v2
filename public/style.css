@@ -5,7 +5,7 @@ body {
   font-style: normal;
 
   width: 100%;
-  height: 100vh;
+  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -234,7 +234,7 @@ body {
 
 .wrap {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .panel {
@@ -255,8 +255,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0px 40px;
-  /* 
-  box-shadow: 0px -21px 19.9px 0px rgba(0, 0, 0, 0.25); */
+
+  box-shadow: 0px -21px 19.9px 0px rgba(0, 0, 0, 0.25);
 }
 
 .panel-content {
@@ -440,7 +440,6 @@ input[type="submit"]:focus {
   .panel-content {
     padding: 0;
     width: 100%;
-    background-size: 90%;
   }
 
   .panel-inner-content {
