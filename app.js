@@ -7,7 +7,7 @@ const axios = require("axios");
 const path = require("path");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configure Cloudinary
 cloudinary.config({
@@ -96,6 +96,6 @@ app.post("/upload", upload.single("image"), (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
