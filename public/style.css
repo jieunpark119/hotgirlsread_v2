@@ -5,10 +5,11 @@ body {
   font-style: normal;
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -225,12 +226,13 @@ body::-webkit-scrollbar {
 }
 
 .logo {
-  position: fixed;
   z-index: -99999;
-  width: 100%; /* Makes the image width cover the entire viewport width */
-  height: 98%; /* Makes the image height cover the entire viewport height */
-  object-fit: contain; /* Ensures the entire image is visible without cropping */
-  padding: 10px 0px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 99%;
+  width: auto;
 }
 
 .logo.hidden {
@@ -261,8 +263,6 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   padding: 0px 40px;
-
-  box-shadow: 0px -21px 19.9px 0px rgba(0, 0, 0, 0.25);
 }
 
 .panel-content {
@@ -332,11 +332,29 @@ h2 {
   line-height: 98%; /* 105px */
   letter-spacing: -0.5px;
 }
-.panel-content img {
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Restrict image width on desktop and mobile */
+.section img {
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0px 0px 31.3px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 31.3px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* .section img {
   width: 450px;
   flex: 1 0 0;
   object-fit: contain;
-}
+  box-shadow: 0px 0px 23.6px 0px rgba(0, 0, 0, 0.25);
+} */
 .image_container {
   display: flex;
   justify-content: space-between;
@@ -434,15 +452,16 @@ input[type="submit"]:focus {
 
 @media (max-width: 768px) {
   .logo {
-    width: 98%; /* Make the logo width 98% on mobile screens */
-    height: auto; /* Allow the logo height to adjust proportionally */
-    padding: 5px 0; /* Adjust padding as needed for smaller screens */
-    position: fixed; /* Position the logo fixed on the screen */
-    top: 50%; /* Align the logo vertically at 50% from the top */
-    left: 50%; /* Align the logo horizontally at 50% from the left */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    z-index: -999; /* Ensure the logo is on top of other content */
+    height: auto;
+    width: 95%;
   }
+
+  .section img {
+    width: 90%;
+    box-shadow: 0px 0px 23.7px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 23.7px 0px rgba(0, 0, 0, 0.2);
+  }
+
   .panel-content {
     background-size: 90%;
     padding: 0;

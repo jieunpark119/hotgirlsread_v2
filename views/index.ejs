@@ -13,12 +13,23 @@
     <link rel="icon" type="image/x-icon" href="/favicon.png">
 
     <link rel="stylesheet" href="/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/fullpage.js/dist/fullpage.min.css'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://use.typekit.net/lpq0cyx.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+        .fp-watermark {
+            display: none;
+        }
+
+        .overflow>.fp-overflow {
+            overflow-y: visible;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,37 +47,31 @@
         <a href="/list">LIST</a>
     </div>
 
-    <div class="wrap">
-        <div class="top">
-            <!-- Optional content for top section -->
-        </div>
 
-        <!-- <% const colors = ['#FF0000', '#05FF00', '#FF00F5', '#0029FF', '#FFE500']; %> -->
-
-        <% if (images.length > 0) { %>
-        <% images.reverse().forEach(imageUrl => { %>
-
-        <section class="panel panel" style="background-color: black;">
-            <div class="panel-content">
-                <div class="panel-content" style="background-image: url('<%= imageUrl %>');">
-
-                </div>
-
+    <div id="fullpage">
+        <div class="section" id="section1">
+            <div class="intro">
 
             </div>
-        </section>
+        </div>
 
-
+        <% if (images.length > 0) { %>
+        <% images.reverse().forEach((imageUrl, index) => { %>
+        <div class="section" id="section<%= index + 1 %>">
+            <img src="<%= imageUrl %>" alt="Uploaded Image">
+        </div>
         <% }) %>
-
         <% } %>
-
 
 
     </div>
 
 
 
+
+
+
+    <script src='https://unpkg.com/fullpage.js/dist/fullpage.min.js'></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js'></script>
