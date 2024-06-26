@@ -91,7 +91,7 @@ app.get("/list", async (req, res) => {
 
 // Route to handle file upload
 app.post("/upload", upload.single("image"), (req, res) => {
-  res.redirect("/list");
+  res.redirect("/");
 });
 
 // Start the server

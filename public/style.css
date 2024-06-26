@@ -444,6 +444,7 @@ input[type="submit"]:focus {
     z-index: -999; /* Ensure the logo is on top of other content */
   }
   .panel-content {
+    background-size: 90%;
     padding: 0;
     width: 100%;
   }
