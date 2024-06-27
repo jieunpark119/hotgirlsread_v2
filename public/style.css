@@ -450,7 +450,38 @@ input[type="submit"]:focus {
   /* Fills the entire box with the image while maintaining aspect ratio */
 }
 
+#scroll-popup {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  z-index: 1000;
+  animation: blink-animation 1.5s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
+  #scroll-popup {
+    color: black;
+  }
+
   .logo {
     height: auto;
     width: 95%;
