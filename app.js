@@ -47,7 +47,7 @@ async function fetchImages() {
         params: {
           prefix: "hotgirlsread/", // Specify the folder name
           type: "upload", // Make sure to specify the type
-          max_results: 30, // Adjust as needed
+          max_results: 100, 
         },
       }
     );
