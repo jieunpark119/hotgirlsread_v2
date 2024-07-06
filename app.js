@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
+const axios = require("axios");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
-const axios = require("axios");
 const path = require("path");
 
 const app = express();
@@ -15,6 +15,7 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
 // Set up Cloudinary storage for Multer
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -34,7 +35,6 @@ app.use(express.urlencoded({ extended: true }));
 // Set the view engine to ejs
 app.set("view engine", "ejs");
 
-// Fetch images from Cloudinary
 async function fetchImages() {
   try {
     const response = await axios.get(
@@ -47,20 +47,28 @@ async function fetchImages() {
         params: {
           prefix: "hotgirlsread/", // Specify the folder name
           type: "upload", // Make sure to specify the type
-          max_results: 100, 
+          max_results: 100,
+          sort_by: "created_at", // Sort by created_at field
+          order: "desc", // Order in descending (latest to oldest)
         },
       }
     );
 
-    const images = response.data.resources.map(
-      (resource) => resource.secure_url
-    );
-    return images;
+    let images = response.data.resources.map((resource) => ({
+      secure_url: resource.secure_url,
+      created_at: new Date(resource.created_at), // Convert to Date object
+    }));
+
+    // Manually sort images by created_at in descending order
+    images.sort((a, b) => b.created_at.getTime() - a.created_at.getTime());
+
+    return images.map((image) => image.secure_url);
   } catch (error) {
     console.error("Error fetching images:", error);
     return [];
   }
 }
+
 
 // Route to display the index page
 app.get("/", async (req, res) => {
@@ -93,6 +101,7 @@ app.get("/list", async (req, res) => {
 app.post("/upload", upload.single("image"), (req, res) => {
   res.redirect("/");
 });
+
 
 // Start the server
 app.listen(PORT, () => {

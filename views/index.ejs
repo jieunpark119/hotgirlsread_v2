@@ -82,7 +82,7 @@
         </div>
 
         <% if (images.length > 0) { %>
-        <% images.reverse().forEach((imageUrl, index) => { %>
+        <% images.forEach((imageUrl, index) => { %>
         <div class="section" id="section<%= index + 1 %>">
             <img src="<%= imageUrl %>" alt="Uploaded Image">
         </div>
